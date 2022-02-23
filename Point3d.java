@@ -1,4 +1,5 @@
-public class Point3d {
+public class Point3d extends Point2d {
+
     private double xCoord;
     private double yCoord;
     private double zCoord;
@@ -14,29 +15,13 @@ public class Point3d {
         this(0, 0, 0);
     }
 
-    // Возвращение координат X, Y, Z
-    public double getX() {
-        return xCoord;
-    }
-
-    public double getY() {
-        return yCoord;
-    }
-
+    // Возвращение координаты Z
     public double getZ() {
         return zCoord;
     }
 
     // Установка значения
-    // координат X, Y, Z
-    public void setX(double val) {
-        xCoord = val;
-    }
-
-    public void setY(double val) {
-        yCoord = val;
-    }
-
+    // координаты Z
     public void setZ(double val) {
         zCoord = val;
     }
@@ -56,9 +41,9 @@ public class Point3d {
     }
 
     // Метод сравнения двух точек
-    public static boolean comparison(Point3d poin1, Point3d poin2) {
+    public static boolean comparison(Point3d point1, Point3d point2) {
 
-        if (poin1.equals(poin2))
+        if (point1.equals(point2))
             return true;
         else
             return false;
@@ -91,7 +76,10 @@ public class Point3d {
                 + ", y = "
                 + obj1.getY() + ", z = " + obj1.getZ() + "\n");
 
-        // вывод расстояние между точками 1 и 2
-        System.out.println("Расстояние между точками 1 и 2 = " + distance(obj1, obj2));
+        // вывод расстояния между точками 1 и 2
+        double dis = distance(obj1, obj2);
+        System.out.print("Расстояние между точками 1 и 2 = ");
+        // форматирование двоичного числа на выходе метода distance
+        System.out.print(String.format("%2.2f", dis));
     }
 }

@@ -50,7 +50,14 @@ public class Lab2 {
         pointInput(obj3, scanner);
 
         // вывод значения площади треугольнка
-        System.out.println("Площадь треугольника = " + computeArea(obj1, obj2, obj3));
+        double area = computeArea(obj1, obj2, obj3);
+
+        if (area == 0) {
+            System.out.println("Ошибка! По заданным координатам невозможно составить треугольник.");
+        } else {
+            System.out.print("Площадь треугольника = ");
+            System.out.print(String.format("%2.2f", area));
+        }
 
         scanner.close();
     }
